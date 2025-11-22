@@ -1,0 +1,84 @@
+/* Importação de fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #4a90e2; 
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+/* Estilo geral da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* Container principal da página */
+.page-container {
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 40px auto; /* Centraliza e adiciona margem superior/inferior */
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Cartão de exibição de dados (usado para IF) */
+.data-card {
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.user-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.user-info strong {
+    color: #555;
+    font-weight: 600;
+}
+
+/* Cartão de mensagem de ausência de dados (usado para ELSE) */
+.message-card {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    color: #777;
+}
+
+.message-card h2 {
+    color: #777;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* Estilização para os spans que receberão os dados */
+.data-card span {
+    font-weight: 600;
+    color: #000;
+}
