@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórum</title>
+    <link rel="stylesheet" href="/static/css/messages.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="/portal">Login</a>
+        <a href="/message-portal">Escrever Mensagem</a>
+    </header>
+
+    <main>
+        <h1>Mensagens do Fórum</h1>
+
+        % if messages:
+            % for msg in messages:
+                <div class="message-card">
+                    <p class="author"><strong>{{msg.autor}}</strong></p>
+                    <p class="text">{{msg.texto}}</p>
+                    <p class="date">{{msg.timestamp}}</p>
+
+                    % if current_user and current_user.username == msg.autor:
+                        <div class="actions">
+                            <a href="/messages/edit/{{msg.id}}" class="edit-btn">Editar</a>
+
+                            <form action="/messages/delete/{{msg.id}}" method="post" style="display:inline;">
+                                <button type="submit" class="delete-btn">Excluir</button>
+                            </form>
+                        </div>
+                    % end
+                </div>
+            % end
+        % else:
+            <p>Nenhuma mensagem encontrada.</p>
+        % end
+    </main>
+
+</body>
+</html>

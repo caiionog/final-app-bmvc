@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Moderno - Mensagens</title>
+    <link rel="stylesheet" href="/static/css/message_portal.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <form id="messageForm" class="login-form" action="/message-portal" method="post">
+            <h2>Enviar Mensagem</h2>
+
+            <div class="input-group">
+                <label for="text">Mensagem</label>
+                <textarea id="text" name="text" placeholder="Digite sua mensagem" rows="5" required></textarea>
+                <div class="error-message" id="textError"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <a href="/" class="link-logout">Voltar a Home</a>
+        </form>
+    </div>
+
+    <script src="/static/js/message_portal.js"></script>
+</body>
+</html>

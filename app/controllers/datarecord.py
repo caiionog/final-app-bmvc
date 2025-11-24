@@ -2,7 +2,6 @@ from app.models.user_account import UserAccount
 import json
 import uuid
 
-
 class DataRecord():
     """Banco de dados JSON para o recurso Usuários"""
 

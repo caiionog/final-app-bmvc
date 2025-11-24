@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Mensagem</title>
+    <link rel="stylesheet" href="/static/css/message_portal.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Editar Mensagem</h2>
+
+        <form action="/messages/edit/{{ msg.id }}" method="POST" id="editMessageForm">
+
+            <div class="input-group">
+                <label for="text">Mensagem:</label>
+                <textarea id="text" name="text" required>{{ msg.texto }}</textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Salvar Alterações</button>
+
+            <a href="/" class="btn-secondary">Cancelar</a>
+        </form>
+
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <script src="/static/js/message_portal.js"></script>
+
+</body>
+</html>

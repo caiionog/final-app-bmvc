@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Interação de Modelos</title>
+    <title>Página do Autor</title>
     <link rel="stylesheet" href="/static/css/pagina.css">
 </head>
 <body>
+
     <div class="page-container">
-        <h1>Minha página com interação de modelos</h1>
 
-        {% if current_user %}
-            <div class="data-card">
-                <h2>Dados do Usuário:</h2>
-                <div class="user-info">
-                    <p><strong>Username:</strong> <span>{{ current_user.username }}</span></p>
-                    <p><strong>Password:</strong> <span>{{ current_user.password }}</span></p>
-                </div>
-            </div>
-        {% else %}
-            <div class="message-card">
-                <h2>Porém, desta vez não foram transferidas quaisquer informações : </h2>
-            </div>
-        {% endif %}
+        <h1>Mensagens de {{ author }}</h1>
 
-    </div>
-    </body>
+        <div class="posts-card">
+        <h2>Posts:</h2>
+
+        % if user_messages and len(user_messages) > 0:
+            <ul class="message-list">
+            % for msg in user_messages:
+                <li class="message-item">
+                    <p class="message-text">{{msg.texto}}</p>
+                    <span class="message-date">{{msg.timestamp}}</span>
+                </li>
+            % end
+            </ul>
+        % else:
+            <p class="no-messages">Este usuário ainda não postou nenhuma mensagem.</p>
+        % end
+</div>
+
+</body>
 </html>
