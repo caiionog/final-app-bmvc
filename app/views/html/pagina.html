@@ -12,22 +12,27 @@
 
         <h1>Mensagens de {{ author }}</h1>
 
-        <div class="posts-card">
-        <h2>Posts:</h2>
+        <!-- Botão Voltar -->
+        <a href="/" class="btn-voltar">← Voltar para Home</a>
 
-        % if user_messages and len(user_messages) > 0:
-            <ul class="message-list">
-            % for msg in user_messages:
-                <li class="message-item">
-                    <p class="message-text">{{msg.texto}}</p>
-                    <span class="message-date">{{msg.timestamp}}</span>
-                </li>
+        <div class="posts-card">
+            <h2>Posts:</h2>
+
+            % if user_messages and len(user_messages) > 0:
+                <ul class="message-list">
+                % for msg in user_messages:
+                    <li class="message-item">
+                        <p class="message-text">{{ msg.texto }}</p>
+                        <span class="message-date">{{ msg.timestamp }}</span>
+                    </li>
+                % end
+                </ul>
+            % else:
+                <p class="no-messages">Este usuário ainda não postou nenhuma mensagem.</p>
             % end
-            </ul>
-        % else:
-            <p class="no-messages">Este usuário ainda não postou nenhuma mensagem.</p>
-        % end
-</div>
+        </div>
+
+    </div>
 
 </body>
 </html>

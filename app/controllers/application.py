@@ -11,7 +11,8 @@ class Application():
             'pagina': self.pagina,
             'portal': self.portal,
             'message_portal': self.message_portal,
-            'messages': self.list_messages
+            'messages': self.list_messages,
+            'buscar_perfil': self.buscar_perfil
         }
 
         self.__model= DataRecord()
@@ -37,6 +38,9 @@ class Application():
     
     def message_portal(self):
         return template('app/views/html/message_portal')
+    
+    def buscar_perfil(self):
+        return template('app/views/html/buscar_perfil')
 
     def pagina(self,username=None):
         user_messages = self.__messages.find_by_user(username)

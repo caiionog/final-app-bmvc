@@ -57,6 +57,15 @@ def logout():
 #-----------------------------------------------------------------------------
 # Suas rotas aqui:
 
+@app.route('/buscar-perfil', method='GET')
+def buscar_perfil():
+    return ctl.render('buscar_perfil')
+
+@app.route('/buscar-perfil', method='POST')
+def action_buscar_perfil():
+    text = request.forms.get('text')
+    return redirect(f'/pagina/{text}')
+
 @app.route('/message-portal', method='GET')
 @login_required
 def message_portal():

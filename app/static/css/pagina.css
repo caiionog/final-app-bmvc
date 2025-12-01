@@ -82,3 +82,57 @@ h2 {
     font-weight: 600;
     color: #000;
 }
+
+/* Botão Voltar */
+.btn-voltar {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px;
+    transition: 0.25s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+/* Lista de mensagens */
+.message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.message-item {
+    background: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.message-text {
+    font-size: 1.05em;
+    margin: 0 0 8px 0;
+}
+
+.message-date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Mensagem quando não há posts */
+.no-messages {
+    background-color: #f9f9f9;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px dashed var(--border-color);
+    color: #777;
+}
